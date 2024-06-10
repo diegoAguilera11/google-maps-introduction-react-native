@@ -5,8 +5,13 @@ import MapView from 'react-native-maps';
 
 import styleMap from './StylesMap';
 import useViewModel from './ViewModel';
+import { StackScreenProps } from '@react-navigation/stack';
+import { RootStackParams } from '../../navigator/MainAppStack';
 
-export const MapScreen = () => {
+
+interface Props extends StackScreenProps<RootStackParams, 'MapScreen'> { };
+
+export const MapScreen = ({ navigation, route }: Props) => {
 
   const { mapRef } = useViewModel();
 
